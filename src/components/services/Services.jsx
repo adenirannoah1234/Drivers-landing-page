@@ -22,7 +22,10 @@ const Services = () => {
   const columnDirection = useBreakpointValue({ base: 'column', md: 'row' });
 
   return (
-    <VStack p={{ base: '0', md: '55' }} marginTop="500px">
+    <VStack
+      p={{ base: '0', md: '55' }}
+      marginTop={{ md: '500px', base: '600px' }}
+    >
       <Heading fontSize="3rem" data-aos="fade-up">
         Our Services
       </Heading>
