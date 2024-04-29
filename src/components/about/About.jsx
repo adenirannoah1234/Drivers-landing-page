@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import {
   HStack,
   VStack,
@@ -9,23 +10,40 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Bike from '../../../public/Bike delivery.png';
+import AOS from 'aos';
+
 const About = () => {
   const columnDirection = useBreakpointValue({ base: 'column', md: 'row' });
-
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
   return (
-    <VStack p={{ base: '10', md: '55' }} spacing="7" bg="#DBFFDC">
-      <Heading fontSize="3rem">About us</Heading>
+    <VStack
+      p={{ base: '10', md: '55' }}
+      spacing="7"
+      bg="#DBFFDC"
+      position="absolute"
+      top={{ md: '750', base: '1220' }}
+      zIndex="1"
+      width="100%"
+    >
+      <Heading fontSize="3rem" data-aos="fade-right">
+        About us
+      </Heading>
       <HStack spacing="9" flexDirection={columnDirection}>
-        <img src={Bike} alt="" width={600} />
+        <img data-aos="fade-right" src={Bike} alt="" width={600} />
         <Box>
-          <Text as="h1" color="#4CAF50" fontSize="2rem">
+          <Text as="h1" color="#4CAF50" fontSize="2rem" data-aos="fade-right">
             Overview
           </Text>
-          <Text fontSize={{ base: '0.987rem', md: '1.7rem' }}>
+          <Text
+            fontSize={{ base: '0.987rem', md: '1.7rem' }}
+            data-aos="fade-right"
+          >
             Experience the fastest way to savor your favorites with our delivery
             app. Swift deliveries, guaranteed!
           </Text>
-          <HStack spacing={4}>
+          <HStack spacing={4} data-aos="fade-right">
             <Box>
               <Text fontSize="1.25rem" textAlign="center" fontWeight="600">
                 5K+

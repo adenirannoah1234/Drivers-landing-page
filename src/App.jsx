@@ -1,4 +1,5 @@
 import './App.css';
+import 'aos/dist/aos.css';
 import CustomNavbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import Service from './pages/service/Service';
