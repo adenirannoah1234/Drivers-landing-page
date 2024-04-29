@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Flex,
   Text,
@@ -18,6 +18,17 @@ const CustomNavbar = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    const handlePopState = () => {
+      setIsOpen(false); // Close the menu when navigating away
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [location]);
 
   return (
     <Flex
@@ -25,7 +36,7 @@ const CustomNavbar = () => {
       align="center"
       justify="space-between"
       wrap="wrap"
-      px={{ md: '4', base: '0' }}
+      px={{ md: '10', base: '0' }}
       bg={{ md: '#dbffdc' }}
       color="#4caf50"
       position="fixed"
@@ -140,17 +151,6 @@ const CustomNavbar = () => {
       </Box>
       <HStack spacing={4} display={{ md: 'flex', base: 'none' }}>
         <SearchIcon w={6} h={6} />
-        <img src="/Divider.png" alt="" />
-        <Button
-          bg="#4caf50"
-          color="white"
-          _hover={{ bg: '#4caf50' }}
-          py={2}
-          px={4}
-          borderRadius="md"
-        >
-          Learn More
-        </Button>
       </HStack>
     </Flex>
   );
