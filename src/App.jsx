@@ -1,6 +1,6 @@
 import './App.css';
-import CustomNavbar from './components/Navbar';
-import Home from './home/Home';
+import CustomNavbar from './components/navbar/Navbar';
+import Home from './pages/home/Home';
 import Service from './pages/service/Service';
 import Footer from './components/footer/Footer';
 import AboutUS from './pages/aboutus/AboutUS';

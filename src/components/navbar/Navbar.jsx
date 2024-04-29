@@ -19,16 +19,8 @@ const CustomNavbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   useEffect(() => {
-    const handlePopState = () => {
-      setIsOpen(false); // Close the menu when navigating away
-    };
-
-    window.addEventListener('popstate', handlePopState);
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, [location]);
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <Flex
