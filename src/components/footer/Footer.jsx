@@ -15,10 +15,14 @@ import Facebook from '../../../public/Facebook.png';
 import Twitter from '../../../public/Twitter.png';
 import Telegram from '../../../public/Telegram.png';
 import Instagram from '../../../public/Instagram.png';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 const Footer = () => {
   const columnDirection = useBreakpointValue({ base: 'column', md: 'row' });
-
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
   return (
     <Flex
       justifyContent="space-between"
@@ -29,7 +33,7 @@ const Footer = () => {
       flexDirection={columnDirection}
     >
       <VStack>
-        <VStack mr={{ md: '0', base: '40px' }}>
+        <VStack mr={{ md: '0', base: '40px' }} data-aos="fade-right">
           <HStack mr="160px" spacing="5">
             <Image src="/swiftlogo.png" w="50" />
             <Text fontSize={{ md: '1.5rem', base: '1.2rem' }} mt="3">
@@ -43,7 +47,11 @@ const Footer = () => {
             Swifdrop gives you the best of food in a flash!
           </Text>
         </VStack>
-        <VStack display={{ base: 'none', md: 'flex' }} spacing="3">
+        <VStack
+          display={{ base: 'none', md: 'flex' }}
+          spacing="3"
+          data-aos="fade-right"
+        >
           <HStack mr={{ md: '150px', base: '330px' }} spacing="3">
             <Image src={Facebook} w="8" h="8" />
             <Image src={Twitter} w="8" h="8" />
@@ -55,7 +63,11 @@ const Footer = () => {
           </Text>
         </VStack>
       </VStack>
-      <HStack spacing={{ base: '10', md: '20' }} mt={{ base: '5', md: '0' }}>
+      <HStack
+        spacing={{ base: '10', md: '20' }}
+        mt={{ base: '5', md: '0' }}
+        data-aos="fade-right"
+      >
         <VStack>
           <Text textDecoration="underline" color="#216624">
             LINKS

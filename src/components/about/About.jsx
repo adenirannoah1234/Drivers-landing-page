@@ -23,7 +23,7 @@ const About = () => {
       spacing="7"
       bg="#DBFFDC"
       position="absolute"
-      top={{ md: '750', base: '1200' }}
+      top={{ md: '750', base: '1220' }}
       zIndex="1"
       width="100%"
     >
