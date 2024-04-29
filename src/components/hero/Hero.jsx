@@ -16,6 +16,7 @@ const Hero = () => {
           as="h1"
           fontSize={{ md: '8rem', base: '4rem' }}
           fontWeight="400"
+          fontFamily="Pacifico, cursive"
           //   mb={70}
         >
           Swif<span style={{ color: '#4caf50' }}>drop</span>
