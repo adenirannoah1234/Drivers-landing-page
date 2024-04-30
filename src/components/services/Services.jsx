@@ -24,7 +24,7 @@ const Services = () => {
   return (
     <VStack
       p={{ base: '0', md: '55' }}
-      marginTop={{ md: '500px', base: '600px' }}
+      marginTop={{ md: '500px', base: '550px' }}
     >
       <Heading fontSize="3rem" data-aos="fade-up">
         Our Services
